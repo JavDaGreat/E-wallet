@@ -1,16 +1,135 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+
+@mixin flex{
+  display: flex;
+  justify-content: center;
+  align-items: centers;
+}
+html{
+  background-color: rgba(0, 0, 0, 0.825);
+}
+#root{
+  margin: 1rem auto;
+  height: 100vh;
+  width: 450px;
+  box-sizing: border-box;
+
+  background-color: white
+}
+.top{
+  text-align: center
+}
+
+.card{
+  @include flex();
+  height: 240px;
+  width: 400px;
+  background-color: yellow;
+  margin: 1rem;
+  padding: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between; 
+ .card-svg{
+  padding: 1rem;
+    @include flex();
+    justify-content: space-between;
+
+  }
+  .cardNumber{
+    text-align: center;
+  }
+  .cardDetail{
+    @include flex();
+    justify-content: space-between;
+  }
+
+}
+.card-form{
+  padding: 1rem;
+  input {
+    display: block;
+    padding: 5px;
+    margin: 10px;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+  }
+  select{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+
+
+
+  }
+  label{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+  }
+  @include flex();
+  flex-direction: column;
+
+.two{
+  display: flex;
+  input{
+    width: 130px;
+  }
+ 
+ 
+}
+button{
+  width: 90%;
+  height: 40px;
+  margin: 1rem;
+}
+
+
 }
 
