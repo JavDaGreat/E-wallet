@@ -8,8 +8,9 @@ function Card() {
 
   return <div className="card">
    <div className="card-svg"> <img src={chip} alt="chip" /> <img src={bitcoin} alt="vendor" /></div>
-   <div className="cardNumber">&nbsp;XXXX &nbsp;&nbsp;XXXX &nbsp;&nbsp;XXXX&nbsp;</div>
-   <div className="cardDetail"> <span>CardHolder:Ayri</span><span> Valid:27/1</span></div>
+
+   <div className="cardNumber">&nbsp;XXXX &nbsp;&nbsp;XXXX &nbsp;&nbsp;XXXX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XXXX</div>
+   <div className="cardDetail"> <div><p>CARDHOLDER NAME</p> <p>AYRi</p></div> <div> <p>VALID THRU</p> <p>27/1</p></div></div>
 
 
 

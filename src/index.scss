@@ -57,18 +57,31 @@ html{
   height: 100vh;
   width: 450px;
   box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
 
   background-color: white
 }
 .top{
-  text-align: center
+  text-align: center;
+  h1{
+    font-weight: 700;
+    font-size: 40px
+  }
+  p{
+    margin-top: 2rem;
+    margin-bottom: 0;
+    color: grey
+
+  }
+
+
 }
 
 .card{
   @include flex();
   height: 240px;
   width: 400px;
-  background-color: yellow;
+  background: linear-gradient(248.04deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 99.07%), #FFAE34;;
   margin: 1rem;
   padding: 0.5rem;
   flex-direction: column;
@@ -89,21 +102,23 @@ html{
 
 }
 .card-form{
+
   padding: 1rem;
   input {
     display: block;
     padding: 5px;
-    margin: 10px;
-    width: 300px;
-    height: 30px;
+    margin: 5px;
+    width: 400px;
+    height: 45px;
     border-radius: 10px;
+    border: 1px solid gray;
   }
   select{
-    width: 300px;
-    height: 30px;
+    width: 410px;
+    height: 60px;
     border-radius: 10px;
     padding: 5px;
-    margin: 10px;
+    margin: 5px;
 
 
 
@@ -118,17 +133,23 @@ html{
 
 .two{
   display: flex;
+  justify-content: space-between;
   input{
-    width: 130px;
+    width: 160px;
   }
  
  
 }
 button{
   width: 90%;
-  height: 40px;
+  height: 55px;
   margin: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  border: none;
 }
+
 
 
 }

@@ -12,13 +12,6 @@ function CardForm() {
 <input type="text" name="name" placeholder="Your name" />
 </div>
 
-
-
-
-
-
-
-
 <div className="two">
  <div className="two-input"><label htmlFor="valid">Valid Thu</label>
 <input type="number" name="valid" placeholder="MM/YY" />
@@ -32,22 +25,12 @@ function CardForm() {
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
 <div> 
   <label htmlFor="vendor"> Select a Vendor</label> 
   <select name="vendor" >
+  <option value="bitcoin">bitcoin</option>
 
   <option value="ninja">ninja</option>
-  <option value="bitcoin">bitcoin</option>
   <option value="evil">evil</option>
   <option value="ninja">ninja</option>
 

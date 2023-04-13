@@ -3,7 +3,7 @@ import Card from '../Components/Card'
 import CardForm from '../Components/CardForm'
 function AddCard(){
   return <div className='AddCard'> 
-    <Top header='Add a new bankcard' cardStatus='New Card'/>
+    <Top header='ADD A NEW BANK CARD' cardStatus='New Card'/>
   <Card />
   <CardForm />
 
