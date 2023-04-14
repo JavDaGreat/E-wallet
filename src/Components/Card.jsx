@@ -5,6 +5,7 @@ import ninja from'../assets/vendor-ninja.svg'
 import blockchain from'../assets/vendor-blockchain.svg'
 
 function Card() {
+  const vendorsLogo=[bitcoin,evil,ninja,blockchain]
 
   return <div className="card">
    <div className="card-svg"> <img src={chip} alt="chip" /> <img src={bitcoin} alt="vendor" /></div>
