@@ -1,20 +1,19 @@
 import { useState } from "react"
 import { useDispatch} from "react-redux"
-import {formChange,addCard,resetForm} from '../Store'
+import {addCard} from '../Store'
 import { useNavigate } from "react-router-dom"
-function CardForm() {
+function CardForm({change,setChange}) {
   const Dispatch=useDispatch()
   const navigate=useNavigate()
-  const [change,setChange]=useState({})
   const handleInputChange=(e)=>{
     const{name,value}=e.target;
     setChange({...change,[name]:value})
-    Dispatch(formChange(change))
+    
 
   }
   const handleClick=()=>{
     Dispatch(addCard(change))
-    Dispatch(resetForm())
+    
     navigate('/')
 
 

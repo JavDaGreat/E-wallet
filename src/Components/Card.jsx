@@ -4,8 +4,11 @@ import bitcoin from'../assets/vendor-bitcoin.svg'
 import ninja from'../assets/vendor-ninja.svg'
 import blockchain from'../assets/vendor-blockchain.svg'
 
-function Card() {
+
+function Card(change) {
   const vendorsLogo=[bitcoin,evil,ninja,blockchain]
+ 
+    console.log(change);
 
   return <div className="card">
    <div className="card-svg"> <img src={chip} alt="chip" /> <img src={bitcoin} alt="vendor" /></div>

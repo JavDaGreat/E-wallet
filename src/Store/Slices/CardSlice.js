@@ -2,18 +2,12 @@ import { createSlice,nanoid } from "@reduxjs/toolkit";
 const cardSlice=createSlice({
   name:'cards',
   initialState:{
-    form:[],
+
     data:[],
     activCard:[]
   },
   reducers:{
-    formChange(state,action){
-      state.form=action.payload
-    },
-    resetForm(state,action){
-state.form=[]
 
-    },
     addCard(state,action){
       state.data.push({
         name:action.payload.name,
@@ -38,5 +32,5 @@ state.form=[]
   }
 })
 
-export const {removeCard,addCard,formChange,resetForm,putActiv}=cardSlice.actions
+export const {removeCard,addCard,putActiv}=cardSlice.actions
 export const cardsReducer= cardSlice.reducer
