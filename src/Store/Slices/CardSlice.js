@@ -9,28 +9,50 @@ const cardSlice=createSlice({
   reducers:{
 
     addCard(state,action){
+ 
+
       state.data.push({
         name:action.payload.name,
         cardNr:action.payload.cardNr,
         expiry:action.payload.expiry,
         cvv:action.payload.cvv,
         vendor:action.payload.vendor,
-        id:nanoid()
 
       })
     },
     removeCard(state,action){
       const updated=state.data.filter((card)=>{
-        return card.id !==action.payload
+        return card.cardNr !== action.payload.cardNr
       })
-      state.data=updated
+      state.data=updated;
     },
     putActiv(state,action){
+      if(state.activCard.length === 0){
+      state.activCard=action.payload
+      
+
+    }else {
+      state.data.push(state.activCard)
       state.activCard=action.payload
 
     }
+   
+
+    },
+    switchCard(state,action){
+      state.data.push(state.activCard)
+
+      state.activCard=action.payload
+      const updated=state.data.filter((card)=>{
+        return card.cardNr !== action.payload.cardNr
+      })
+      state.data=updated;
+    
+     
+    }
+
   }
 })
 
-export const {removeCard,addCard,putActiv}=cardSlice.actions
+export const {removeCard,addCard,putActiv,switchCard}=cardSlice.actions
 export const cardsReducer= cardSlice.reducer

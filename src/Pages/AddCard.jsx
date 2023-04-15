@@ -7,7 +7,7 @@ function AddCard(){
  
   return <div className='AddCard'> 
     <Top header='ADD A NEW BANK CARD' cardStatus='New Card'/>
-  <Card  change={change}/>
+  <Card  CardDetail={change} key={'addCard'}/>
   <CardForm change={change} setChange={setChange} />
 
 

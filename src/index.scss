@@ -81,19 +81,22 @@ html{
   @include flex();
   height: 240px;
   width: 400px;
-  background: linear-gradient(248.04deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 99.07%), #FFAE34;;
+  background: linear-gradient(248.04deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 99.07%), #b3b3b3;;
   margin: 1rem;
   padding: 0.5rem;
   flex-direction: column;
   justify-content: space-between; 
  .card-svg{
   padding: 1rem;
+  padding-top: 0;
     @include flex();
     justify-content: space-between;
 
   }
   .cardNumber{
     text-align: center;
+    font-size: 2rem
+    
   }
   .cardDetail{
     @include flex();
@@ -166,4 +169,5 @@ button{
 .bitcoin{
   background:linear-gradient(248.04deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 99.07%), #FFAE34;
 }
+
 

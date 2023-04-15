@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch} from "react-redux"
-import {addCard} from '../Store'
+import {addCard,putActiv} from '../Store'
 import { useNavigate } from "react-router-dom"
 function CardForm({change,setChange}) {
   const Dispatch=useDispatch()
@@ -12,7 +12,9 @@ function CardForm({change,setChange}) {
 
   }
   const handleClick=()=>{
-    Dispatch(addCard(change))
+    // Dispatch(addCard(change))
+    setChange({})
+    Dispatch(putActiv(change))
     
     navigate('/')
 
