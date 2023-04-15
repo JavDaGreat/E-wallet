@@ -4,7 +4,7 @@ const content=storeCards.map((storeCard)=>{
   console.log(storeCard);
   return <Card  CardDetail={storeCard} key={storeCard.cardNr} cardStack={true} />
 })
-  return <div>{content}</div>
+  return <div className="cardStack">{content}</div>
 }
 
 export default CardStack

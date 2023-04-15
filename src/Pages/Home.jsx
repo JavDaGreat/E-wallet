@@ -15,7 +15,7 @@ const activCard=useSelector((state)=>{
 const handleclick=()=>{
   navigate('/addcard')
 }
-  return <div>
+  return <div className="Home">
     <Top header= 'E - Wallet' cardStatus='Activ Card'/>
     <Card CardDetail={activCard} key={'cardHome'}/>
     <CardStack storeCards={storeCards} />

@@ -11,8 +11,18 @@ function CardForm({change,setChange}) {
     
 
   }
-  const handleClick=()=>{
-    // Dispatch(addCard(change))
+  const handleSpace=(e)=>{
+    const{name}=e.target;
+    const input = e.target.value;
+
+    const formattedInput = input.replace(/(.{4})/g, "$1 ");
+    setChange({...change,[name]:formattedInput})
+
+    
+
+  }
+  const handleClick=(e)=>{
+    e.preventDefault()
     setChange({})
     Dispatch(putActiv(change))
     
@@ -20,23 +30,25 @@ function CardForm({change,setChange}) {
 
 
   }
+
   return <div className="card-form">
+    <form onSubmit={handleClick}>
 <div>
 <label htmlFor="cardNr">Credit Card Number:</label>
-<input name="cardNr" type="tel"  maxLength="19" placeholder="xxxx xxxx xxxx xxxx" onChange={handleInputChange}></input>
+<input name="cardNr" type="number"  maxLength="16" placeholder="XXXX XXXX XXXX XXXX " onChange={handleSpace }  required></input>
 </div>
 <div>
 <label htmlFor="name">Card Holder Name</label>
-<input type="text" name="name" placeholder="Your name"  onChange={handleInputChange} />
+<input type="text" name="name" placeholder="Your name"  onChange={handleInputChange} required />
 </div>
 
 <div className="two">
  <div className="two-input"><label htmlFor="expiry" >Valid Thu</label>
-<input type="number" name="expiry" placeholder="MM/YY"  onChange={handleInputChange} />
+<input type="month" name="expiry" placeholder="MM/YY"  onChange={handleInputChange}  required/>
 </div>
 <div>
  <label htmlFor="cvv">CVV </label>
-<input type="number" name="cvv"  placeholder="XXX"  onChange={handleInputChange} />
+<input type="number" name="cvv"  placeholder="XXX"  onChange={handleInputChange} required/>
 
 </div>
 
@@ -45,7 +57,7 @@ function CardForm({change,setChange}) {
 
 <div> 
   <label htmlFor="vendor"> Select a Vendor</label> 
-  <select name="vendor" defaultValue=""  onChange={handleInputChange}>
+  <select name="vendor" defaultValue=""  onChange={handleInputChange} required>
     <option value="" disabled>--Select a Vendor--</option>
   <option value="bitcoin">bitcoin</option>
 
@@ -61,7 +73,8 @@ function CardForm({change,setChange}) {
 
   
 
-  <button onClick={handleClick}>ADD Card</button>
+  <button >ADD Card</button>
+  </form>
   </div>
 
 }

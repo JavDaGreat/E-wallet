@@ -33,14 +33,16 @@ const handleDelete=()=>{Dispatch(removeCard(CardDetail))}
   }else if(CardDetail?.vendor == 'blockchain'){
     imgLogo=vendorsLogo[3]}
 
+   
+
   return <div className={`card ${CardDetail?.vendor}`}  >
    <div className='card-svg '> {cardStack &&  deleteButton} {cardStack && activButton}</div>
 
  
    <div className="card-svg"> <img src={chip} alt="chip" /> <img src={imgLogo || Bank} alt="vendor"/> </div>
 
-   <div className="cardNumber">{CardDetail?.cardNr}</div>
-   <div className="cardDetail"> <div><p>CARDHOLDER NAME</p> <p>{CardDetail?.name}</p></div> <div> <p>VALID THRU</p> <p>{CardDetail?.expiry}</p></div></div>
+   <div className="cardNumber">{CardDetail?.cardNr || `XXXX XXXX XXXX XXXX`}</div>
+   <div className="cardDetail"> <div><p>CARDHOLDER NAME</p> <span>{CardDetail?.name || 'Your Name'}</span></div> <div> <p>VALID THRU</p> <span>{CardDetail?.expiry || 'MM/YY'}</span></div></div>
 
 
 

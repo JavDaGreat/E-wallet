@@ -59,6 +59,7 @@ html {
   box-sizing: border-box;
   font-family: "Source Sans Pro", sans-serif;
   background-color: white;
+  overflow: auto;
 }
 
 .top {
@@ -99,12 +100,20 @@ html {
 .card .cardNumber {
   text-align: center;
   font-size: 2rem;
+  font-weight: 600;
 }
 .card .cardDetail {
   display: flex;
   justify-content: center;
   align-items: centers;
   justify-content: space-between;
+}
+.card .cardDetail span {
+  font-weight: 800;
+}
+.card .cardDetail p {
+  font-weight: 300;
+  font-size: 0.7rem;
 }
 
 .card-form {
@@ -154,14 +163,17 @@ html {
 
 .blockchain {
   background: linear-gradient(248.3deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%), #222222;
+  color: white;
 }
 
 .evil {
   background: linear-gradient(248.3deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%), #F33355;
+  color: white;
 }
 
 .ninja {
   background: linear-gradient(248.52deg, rgba(0, 0, 0, 0.15) 1.49%, rgba(0, 0, 0, 0) 100%), #8B58F9;
+  color: white;
 }
 
 .bitcoin {
@@ -173,5 +185,25 @@ html {
 }
 .interactiv:hover {
   transform: translateY(-0.25em);
+  cursor: pointer;
+}
+
+button {
+  width: 90%;
+  height: 55px;
+  margin: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  border: none;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input:hover {
   cursor: pointer;
 }/*# sourceMappingURL=index.css.map */
