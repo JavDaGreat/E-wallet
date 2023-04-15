@@ -20,8 +20,8 @@ function Card({CardDetail,cardStack}) {
 const handleFavorit= ()=>{  Dispatch(switchCard(CardDetail))}
 const handleDelete=()=>{Dispatch(removeCard(CardDetail))}
 
- const deleteButton=<img src= {remove} alt="" onClick={ handleDelete } />
- const activButton= <img src={activ} alt="" onClick={handleFavorit} />
+ const deleteButton=<img src= {remove} alt="" onClick={ handleDelete }  className='interactiv' style={{backgroundColor:'red'}}/>
+ const activButton= <img src={activ} alt="" onClick={handleFavorit} className='interactiv' />
  
   if(CardDetail?.vendor == 'bitcoin'){
  imgLogo=vendorsLogo[0]
@@ -34,7 +34,7 @@ const handleDelete=()=>{Dispatch(removeCard(CardDetail))}
     imgLogo=vendorsLogo[3]}
 
   return <div className={`card ${CardDetail?.vendor}`}  >
-   <div className='card-svg'> {cardStack &&  deleteButton} {cardStack && activButton}</div>
+   <div className='card-svg '> {cardStack &&  deleteButton} {cardStack && activButton}</div>
 
  
    <div className="card-svg"> <img src={chip} alt="chip" /> <img src={imgLogo || Bank} alt="vendor"/> </div>
