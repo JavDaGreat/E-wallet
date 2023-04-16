@@ -4,10 +4,14 @@ import CardStack from '../Components/CardStack'
 import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 function Home() {
+  const storeCards=useSelector((state)=>{
+    return state.cards.data
+  })
+
+
+  
 const navigate= useNavigate()
-const storeCards=useSelector((state)=>{
-  return state.cards.data
-})
+
 const activCard=useSelector((state)=>{
   return state.cards.activCard
 })
@@ -17,7 +21,7 @@ const handleclick=()=>{
 }
   return <div className="Home">
     <Top header= 'E - Wallet' cardStatus='Activ Card'/>
-    <Card CardDetail={activCard} key={'cardHome'}/>
+    <Card CardDetail={activCard} key={'cardHome'} />
     <CardStack storeCards={storeCards} />
   <button onClick={handleclick}>Addcard</button>
   </div>

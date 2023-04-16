@@ -7,7 +7,7 @@ import Bank from '../assets/Bank.svg'
 import remove from '../assets/remove.svg'
 import activ from '../assets/Activ.svg'
 import { useDispatch } from 'react-redux'
-import { putActiv,removeCard,switchCard } from '../Store'
+import { removeCard,switchCard } from '../Store'
 
 
 function Card({CardDetail,cardStack}) {
@@ -17,8 +17,17 @@ function Card({CardDetail,cardStack}) {
 
 
 
+ 
+
+
+
 const handleFavorit= ()=>{  Dispatch(switchCard(CardDetail))}
-const handleDelete=()=>{Dispatch(removeCard(CardDetail))}
+const handleDelete=()=>{
+  Dispatch(removeCard(CardDetail))
+
+
+
+}
 
  const deleteButton=<img src= {remove} alt="" onClick={ handleDelete }  className='interactiv' style={{backgroundColor:'red'}}/>
  const activButton= <img src={activ} alt="" onClick={handleFavorit} className='interactiv' />

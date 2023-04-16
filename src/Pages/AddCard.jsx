@@ -4,6 +4,8 @@ import CardForm from '../Components/CardForm'
 import { useState } from 'react'
 function AddCard(){
  const [change,setChange]=useState({})
+ const [data, setData] = useState([]);
+
  
   return <div className='AddCard'> 
     <Top header='ADD A NEW BANK CARD' cardStatus='New Card'/>
