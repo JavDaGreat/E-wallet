@@ -1,8 +1,12 @@
 import { useDispatch} from "react-redux"
 import {putActiv} from '../Store'
 import { useNavigate } from "react-router-dom"
-function CardForm({change,setChange}) {
-  const Dispatch=useDispatch()
+function CardForm({change,setChange,setShowError}) {
+
+  const Cards=JSON.parse(localStorage.getItem('Cards'));
+
+
+    const Dispatch=useDispatch()
   const navigate=useNavigate()
   const handleInputChange=(e)=>{
     const{name,value}=e.target;
@@ -21,14 +25,18 @@ function CardForm({change,setChange}) {
 
 
   }
- 
   const handleClick=(e)=>{
     e.preventDefault()
-    setChange({})
+    if(Cards.length === 3){
+     setShowError(true)
+    
+    } else{
     Dispatch(putActiv(change))
     
-    
+    setChange({})
+
     navigate('/')
+    }
 
 
   }
@@ -37,7 +45,7 @@ function CardForm({change,setChange}) {
     <form onSubmit={handleClick}>
 <div>
 <label htmlFor="cardNr">Credit Card Number:</label>
-<input name="cardNr" type="number"  maxLength="16" placeholder="XXXX XXXX XXXX XXXX " onChange={handleSpace }  required></input>
+<input name="cardNr" type="text" pattern="[0-9]*" maxLength="16" placeholder="XXXX XXXX XXXX XXXX " onChange={handleSpace}  required></input>
 </div>
 <div>
 <label htmlFor="name">Card Holder Name</label>
@@ -50,7 +58,7 @@ function CardForm({change,setChange}) {
 </div>
 <div>
  <label htmlFor="cvv">CVV </label>
-<input type="number" name="cvv"  placeholder="XXX"  onChange={handleInputChange} required/>
+<input type="number" name="cvv"  placeholder="XXX"  onChange={handleInputChange} maxLength={3} required/>
 
 </div>
 
@@ -65,7 +73,7 @@ function CardForm({change,setChange}) {
 
   <option value="ninja">ninja</option>
   <option value="evil">evil</option>
-  <option value="ninja">ninja</option>
+  <option value="blockchain">blockchain</option>
 
   </select> 
   </div>

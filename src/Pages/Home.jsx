@@ -4,17 +4,41 @@ import CardStack from '../Components/CardStack'
 import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 function Home() {
-  const storeCards=useSelector((state)=>{
-    return state.cards.data
-  })
 
 
   
-const navigate= useNavigate()
+  const getCards = JSON.parse(localStorage.getItem('Cards'));
+  const getAktivCard = JSON.parse(localStorage.getItem('AktivCard'));
+  const reduxCards=useSelector((state)=>{
+  return state.cards.data
+    
+  })
+  const reduxActivcard=useSelector((state)=>{
+    return state.cards.activCard
+  })
 
-const activCard=useSelector((state)=>{
-  return state.cards.activCard
-})
+
+  const navigate= useNavigate()
+  let storeCards;
+  let activCard;
+  
+
+   if(getCards?.length !== 0){
+    storeCards=getCards
+   }else{
+    storeCards=reduxCards
+
+   }
+
+   if(getAktivCard &&(Object.keys(getAktivCard).length === 0)){
+    activCard=reduxActivcard
+   }else{
+    activCard=getAktivCard
+   }
+ 
+ 
+
+
 
 const handleclick=()=>{
   navigate('/addcard')

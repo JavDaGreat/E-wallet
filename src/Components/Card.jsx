@@ -17,13 +17,17 @@ function Card({CardDetail,cardStack}) {
 
 
 
- 
+
+const handleFavorit= ()=>{  
+  Dispatch(switchCard(CardDetail))
 
 
-
-const handleFavorit= ()=>{  Dispatch(switchCard(CardDetail))}
+}
 const handleDelete=()=>{
   Dispatch(removeCard(CardDetail))
+  localStorage.removeItem('myData', JSON.stringify(CardDetail))
+
+  
 
 
 
