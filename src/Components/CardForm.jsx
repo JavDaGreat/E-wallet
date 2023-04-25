@@ -27,7 +27,7 @@ function CardForm({change,setChange,setShowError}) {
   }
   const handleClick=(e)=>{
     e.preventDefault()
-    if(Cards.length === 3){
+    if(Cards?.length === 3){
      setShowError(true)
     
     } else{
