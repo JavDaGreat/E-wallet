@@ -1,23 +1,23 @@
-import { RouterProvider,createBrowserRouter } from "react-router-dom"
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AddCard from "./Pages/AddCard";
-import Home from './Pages/Home'
+import Home from "./Pages/Home";
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/',
-      element: <Home />
+      path: "/",
+      element: <Home />,
     },
     {
-      path: '/addcard',
-      element: <AddCard />
+      path: "/addcard",
+      element: <AddCard />,
     },
-   
-   
   ]);
 
-  return <div>
-    <RouterProvider router={ router } />
+  return (
+    <div className="layout">
+      <RouterProvider router={router} />
+    </div>
+  );
+}
 
-  </div>}
-
-export default App
+export default App;
